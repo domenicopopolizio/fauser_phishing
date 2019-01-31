@@ -1,3 +1,3 @@
 <?php
-  header("Location: www.fauser.edu°);
+  header("Location: www.fauser.edu");
 ?>
